@@ -1,0 +1,109 @@
+:root {
+  color-scheme: light;
+  --bg: #0f172a;
+  --panel: #111827;
+  --text: #e5eefb;
+  --muted: #cbd5e1;
+  --accent: #38bdf8;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+.container { width: min(1100px, calc(100% - 2rem)); margin: 0 auto; }
+
+.site-header {
+  background: rgba(15, 23, 42, 0.95);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 68px;
+  gap: 1rem;
+}
+
+.brand { color: #fff; text-decoration: none; font-weight: 700; font-size: 1.1rem; }
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.nav-links a:hover { color: #fff; }
+
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  color: #fff;
+  padding: 0.45rem 0.65rem;
+  border-radius: 8px;
+}
+
+.hero {
+  display: grid;
+  align-items: center;
+  min-height: calc(100vh - 68px);
+}
+
+.eyebrow { text-transform: uppercase; letter-spacing: 0.25em; color: var(--accent); font-size: 0.85rem; }
+
+h1 { font-size: clamp(2.2rem, 6vw, 4rem); line-height: 1.1; margin: 0.2rem 0 0.8rem; }
+.lead { color: var(--muted); max-width: 42rem; font-size: 1.05rem; }
+
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.8rem 1rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #082f49;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.card {
+  background: rgba(17, 24, 39, 0.92);
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  border-radius: 18px;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  box-shadow: 0 18px 30px rgba(15, 23, 42, 0.35);
+}
+
+@media (max-width: 700px) {
+  .menu-toggle { display: inline-block; }
+  .nav-links {
+    position: absolute;
+    top: 68px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: rgba(15, 23, 42, 0.98);
+    padding: 1rem;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+    display: none;
+  }
+  .nav-links.open { display: flex; }
+}
